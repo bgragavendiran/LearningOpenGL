@@ -4,6 +4,22 @@
 // IDHU window size changing callback
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
+	std::cout << "Great to be here" << width << height << std::endl;
+	glViewport(0, 0, width, height);
+}
+
+// Idhu button press panna track panni vela paka
+void processInput(GLFWwindow* window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+		std::cout << "You Pressed it man!!, You did it.!" << std::endl;
+		glfwSetWindowShouldClose(window, true);
+	}
+		
+}
+
+int main()
+{
 	// Initialize GLFW
 	glfwInit();
 
@@ -60,19 +76,4 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	glfwTerminate();
 	return 0;
 
-}
-
-// IDHU window size changing callback
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	std::cout << "Great to be here" << width << height << std::endl;
-	glViewport(0, 0, width, height);
-}
-
-// Idhu button press panna track panni vela paka
-void processInput(GLFWwindow* window)
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		std::cout << "You Pressed it man!!, You did it.!" << std::endl;
-	glfwSetWindowShouldClose(window, true);
 }
